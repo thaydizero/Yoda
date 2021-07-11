@@ -47,24 +47,41 @@ public class gerenciamentoDeIncidentes {
 
 		List<String> incidentes = LerArquivo.lerArquivoObjetos(caminhoArquivo);
 
+		for (int i = 0; i < incidentes.size(); i++) {
+			for (String string : incidentes) {
 
-			
-			for (int i = 0; i < incidentes.size(); i++) {
-				for (String string : incidentes) {
-
-					String[] result = string.split("_");
-				if (i == incidentes.size() -1) {
+				String[] result = string.split("_");
+				if (i == incidentes.size() - 1) {
 					// <listOfOrders><orderActionId>3500301888A</orderActionId><stepToSkip>01</stepToSkip></listOfOrders>
 					System.out.println("<listOfOrders><orderActionId>" + result[1] + "</orderActionId><stepToSkip>"
 							+ result[0] + "</stepToSkip></listOfOrders>");
-					
+
 				} else {
-					
+
 					// System.out.println(incidentes.get(i).substring(0, 10));
 				}
 			}
-			
+
 		}
-			System.out.println("\n\n\n");
+		System.out.println("\n\n\n");
+	}
+
+	public void geraDePara() throws FileNotFoundException, IOException {
+
+		List<String> incidentes = LerArquivo.lerArquivoObjetos(caminhoArquivo);
+
+		for (int i = 0; i < incidentes.size(); i++) {
+			String[] result = incidentes.get(i).split("-");
+
+			if (i == incidentes.size() - 1) {
+				System.out.println("'ID do Incidente*+' = " + result[1].trim() + "" + (char) 34 + "");
+				// System.out.println("" + result[1]);
+
+			} else {
+				System.out.println("'ID do Incidente*+' = " + result[1].trim() + "" + (char) 34 + " OR");
+				// System.out.println(incidentes.get(i).substring(0, 10));
+			}
+		}
+		System.out.println("\n\n\n");
 	}
 }

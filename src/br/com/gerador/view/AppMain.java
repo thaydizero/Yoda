@@ -28,6 +28,7 @@ public static void main(String[] args) throws IOException {
 //	System.out.println("|4------ NOTAS AMDOCS--------------|");
 //	System.out.println("|5------ NOTAS NGIN ---------------|");
 	System.out.println("( 3 )  QUERY SKIP MASSIVO\n");
+	System.out.println("( 4 )  DE/PARA\n");
 	System.out.println("( 0 )  Sair\n ");
 
 
@@ -54,9 +55,12 @@ public static void main(String[] args) throws IOException {
 		break;
 		
 	case 4:
-		sma.SubAmdocs(args);
+		gdi.geraDePara();
 		break;
 
+	case 5:
+		sma.SubAmdocs(args);
+		break;
 	case 6:
 		//notas n1
 		sm.Subn1(args);
