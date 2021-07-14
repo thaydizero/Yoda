@@ -74,11 +74,11 @@ public class gerenciamentoDeIncidentes {
 			String[] result = incidentes.get(i).split("-");
 
 			if (i == incidentes.size() - 1) {
-				System.out.println("'ID do Incidente*+' = " + result[1].trim() + "" + (char) 34 + "");
+				System.out.println("'ID do Incidente*+' = " + (char) 34 + result[1].trim() + "" + (char) 34 + "");
 				// System.out.println("" + result[1]);
 
 			} else {
-				System.out.println("'ID do Incidente*+' = " + result[1].trim() + "" + (char) 34 + " OR");
+				System.out.println("'ID do Incidente*+' = " + (char) 34 + result[1].trim() + "" + (char) 34 + " OR");
 				// System.out.println(incidentes.get(i).substring(0, 10));
 			}
 		}
